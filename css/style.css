@@ -657,25 +657,46 @@ input[type="range"]::-moz-range-thumb {
 .showcase-strip img:hover { transform: scale(1.05); filter: saturate(1.15); }
 
 /* ==========================================================================
-   About
+   Meet the Team
    ========================================================================== */
-.about-grid {
-  display: grid;
-  grid-template-columns: 0.75fr 1.25fr;
-  gap: 64px;
-  align-items: center;
+.team-intro-extra {
+  max-width: 760px;
+  color: var(--gray);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin: -20px 0 48px;
 }
-.about-media { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); max-width: 420px; }
-.about-media img { aspect-ratio: 4/5; object-fit: cover; }
-.about-badges { display: flex; flex-wrap: wrap; gap: 12px; margin: 26px 0 32px; }
-.about-badge {
-  font-size: 0.82rem;
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-bottom: 48px;
+}
+.team-card { text-align: center; }
+.team-photo {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 18px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.team-photo img { aspect-ratio: 4/5; object-fit: cover; transition: transform 0.6s ease; }
+.team-card:hover .team-photo { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.team-card:hover .team-photo img { transform: scale(1.05); }
+.team-card h3 { font-size: 1.08rem; margin-bottom: 4px; }
+.team-role {
+  font-size: 0.8rem;
   font-weight: 700;
-  color: var(--navy);
-  background: var(--cream-2);
-  border: 1px solid var(--line);
-  padding: 8px 16px;
-  border-radius: 999px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+}
+.team-cta-line {
+  max-width: 640px;
+  color: var(--gray);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 8px;
 }
 
 /* ==========================================================================
@@ -872,15 +893,16 @@ input[type="range"]::-moz-range-thumb {
   .value-grid { grid-template-columns: repeat(2, 1fr); }
   .guide-timeline { grid-template-columns: repeat(2, 1fr); }
   .listing-grid { grid-template-columns: repeat(2, 1fr); }
-  .ft-grid, .calc-wrap, .sellers-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 44px; }
+  .ft-grid, .calc-wrap, .sellers-grid, .contact-grid { grid-template-columns: 1fr; gap: 44px; }
   .ft-square { margin: 0 auto; }
-  .about-media { margin: 0 auto; }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
   .showcase-strip { grid-template-columns: repeat(2, 1fr); height: auto; }
   .showcase-strip img { aspect-ratio: 1/1; }
 }
 
 @media (max-width: 720px) {
   .section { padding: 76px 0; }
+  .team-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
   .value-grid { grid-template-columns: 1fr; }
   .guide-timeline { grid-template-columns: 1fr; }
   .listing-grid { grid-template-columns: 1fr; }
